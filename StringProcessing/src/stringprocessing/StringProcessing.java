@@ -30,7 +30,9 @@ public class StringProcessing {
             Scanner reader = new Scanner(new File(args[0]));
             int currentIndex=0;
             while(reader.hasNext()){
+                
         String[]line = reader.nextLine().split(",");
+  
         String firstName = line[0];
         String lastName= line[1];
         String gender = line[2];
@@ -121,11 +123,15 @@ public class StringProcessing {
 
 public static boolean validAge(String age){
     age = age.trim();
+    
+       
     int ageNum=Integer.parseInt(age);
     
     if(1<=ageNum && ageNum<=130){
         return true;
-}else{
+    }
+    
+else{
 return false;
 }
 }
