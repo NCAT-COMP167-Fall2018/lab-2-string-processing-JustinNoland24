@@ -124,7 +124,9 @@ public class StringProcessing {
 public static boolean validAge(String age){
     age = age.trim();
     
-       
+       if(age.isEmpty()){
+           return true;
+       }
     int ageNum=Integer.parseInt(age);
     
     if(1<=ageNum && ageNum<=130){
