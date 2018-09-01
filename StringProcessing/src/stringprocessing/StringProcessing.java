@@ -23,9 +23,9 @@ public class StringProcessing {
          String[] records =new String[100];
         char ch;
        
-       System.out.println("Enter firstName: ");
-       Scanner input=new Scanner(System.in);
-       String name1=input.next();
+       //System.out.println("Enter firstName: ");
+       //Scanner input=new Scanner(System.in);
+      // String name1=input.next();
         try {
             Scanner reader = new Scanner(new File(args[0]));
             int currentIndex=0;
@@ -101,8 +101,8 @@ public class StringProcessing {
     public static boolean FirstNameValid(String firstName ){
       //password.matches("[A-Za-z0-9 ]*"); 
       firstName=firstName.trim();
-     boolean checkingLetters=firstName.matches("[a-zA-Z]*");
-        if(checkingLetters){
+     boolean checkingLetters1=firstName.matches("[a-zA-Z]*");
+        if(checkingLetters1){
             return true;
         }else{
             System.out.println("error");
@@ -112,11 +112,18 @@ public class StringProcessing {
      public static boolean LastNameValid(String lastName ){
       //password.matches("[A-Za-z0-9 ]*"); 
       lastName=lastName.trim();
+      lastName=lastName.replaceAll("\\d","");
+      lastName.trim();
+     /* if(lastName.matches("[\\d]")){
+        return true; 
+    *}
+*/
      boolean checkingLetters=lastName.matches("[a-zA-Z]*");
+     
         if(checkingLetters){
             return true;
         }else{
-        
+        // check for numbers in last name
         return false;
         }
      }
@@ -127,6 +134,7 @@ public static boolean validAge(String age){
        if(age.isEmpty()){
            return true;
        }
+       age=age.trim();
     int ageNum=Integer.parseInt(age);
     
     if(1<=ageNum && ageNum<=130){
