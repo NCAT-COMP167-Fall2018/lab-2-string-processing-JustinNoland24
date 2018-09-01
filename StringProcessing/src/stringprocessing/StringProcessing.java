@@ -43,35 +43,35 @@ public class StringProcessing {
         if(FirstNameValid(firstName)){
             records[currentIndex]=String.format("%-20s",firstName);//Check
                     }else{
-            System.err.println(String.format("error"));
+            System.err.print(String.format("%-20s","Error"));
         }
           if(LastNameValid(lastName)){
             records[currentIndex]=String.format("%-20s%-20s",firstName,lastName);//Check
             System.out.print(records[currentIndex]);
                     }else{
-            System.err.println(String.format("error"));
+            System.err.print(String.format("%-20s%-20s","Error",""));
         }
         
         if(genderIsValid(gender)){
          records[currentIndex] = String.format("%-20s%-20s%-20s",firstName,lastName,gender);  //Check if element is added
         }else{
-            System.err.println(String.format("error"));
+            System.err.print(String.format("%-20s%-20s%-20s","Error","",""));
         }
          
         if(validAge(age)){
          records[currentIndex] = String.format("%-20s%-20s%-20s%-20s",firstName,lastName,gender,age);  //Check if element is added
         }else{
-            System.err.println(String.format("error"));
+            System.err.print(String.format("%-20s%-20s%-20s%-20s","Error","","",""));
        }
         if (validPhoneNumber(phoneNumber)){
-         records[currentIndex] = String.format("%-20s%-20s%-20s",firstName,lastName,gender);  //Check if element is added
+         records[currentIndex] = String.format("%-20s%-20s%-20s%-20s%-20s",firstName,lastName,gender,age,phoneNumber);  //Check if element is added
         }else{
-            System.err.println(String.format("error"));
+            System.err.print(String.format("%-20s%-20s%-20s%-20s%-20s","Error","","","",""));
         }
          if (validEmail(email)){
-         records[currentIndex] = String.format("%-20s%-20s%-20s",firstName,lastName,gender);  //Check if element is added
+         records[currentIndex] = String.format("%-20s%-20s%-20s%-20s%-20s%-20s",firstName,lastName,gender,age,phoneNumber,email);  //Check if element is added
         }else{
-            System.err.println(String.format("error"));
+            System.err.print(String.format("%-20s%-20s%-20s%-20s%-20s%-20s","Error","","","","",""));
         }
         
         records[currentIndex]=String.format("%-20s%-20s%-20s%-20s%-20s%-20s",firstName,lastName,gender,age,phoneNumber,email);
